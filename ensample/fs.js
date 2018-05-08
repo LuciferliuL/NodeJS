@@ -20,3 +20,35 @@ try {
 } catch (err) {
     //出错
 }
+//写入文件
+var data = 'Hello,Node.js';
+fs.writeFile('./output.txt',data,function(err){
+    if(err){
+        console.log(err)
+    }else{
+        console.log('OK')
+    }
+})
+fs.writeFileSync('./output.txt',data,function(err){
+    if(err){
+        console.log(err)
+    }else{
+        console.log('OK')
+    }
+})
+//获取文件信息
+fs.stat('./sample.txt',function(err, stat){
+    if(err){
+        console.log(err)
+    }else{
+        //是否文件
+        console.log('isFile' + stat.isFile())
+        //是否是目录
+        console.log('isDirectory'+stat.isDirectory())
+        if(stat.isFile){
+            console.log('size'+stat.size)
+            console.log('birth time'+stat.birthtime)
+            console.log('modified time'+stat.mtime)
+        }
+    }
+})
