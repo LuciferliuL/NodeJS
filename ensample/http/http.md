@@ -1,0 +1,8 @@
+#http
+http模块提供request和response对象
+request对象封装了HTTP请求，可以拿到所有HTTP请求的信息
+response对象封装响应，吧HTTP响应返回给浏览器
+#文件服务器
+解析request.url中的路径，然后在本地找到对应的文件，把文件内容发送出去即可
+#URL
+解析URL需要用到Node.js提供的url模块，它使用起来非常简单，通过parse()将一个字符串解析为一个Url对象
